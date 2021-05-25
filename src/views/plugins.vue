@@ -62,8 +62,8 @@ import 'codemirror/theme/seti.css'
 export default class Plugins extends Vue {
 	selectedItem = -1
 	plugin:{
-    name: string
-  }[] = []
+		name: string
+	}[] = []
 
 	LuaFileName = ''
 	LuaFileSrc = ''
