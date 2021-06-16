@@ -11,7 +11,7 @@ import * as io from 'socket.io-client'
 // 	transports: ['websocket'],
 // 	query: { EIO: '3', transport: 'websocket' }
 // }
-let ws = (location.protocol == "http:") ? "ws://" : "wss://"
+const ws = location.protocol == 'http:' ? 'ws://' : 'wss://'
 Vue.use(
 	new VueSocketIO({
 		connection: io(`${ws}${location.host}`, {
@@ -19,8 +19,7 @@ Vue.use(
 			secure: true,
 			reconnection: true,
 			rejectUnauthorized: false,
-			transports: ['websocket'],
-			query: { EIO: '3', transport: 'websocket' }
+			transports: ['websocket']
 		})
 	})
 )

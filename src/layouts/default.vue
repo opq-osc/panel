@@ -63,7 +63,7 @@ export default class Layout extends Vue {
 	drawer = true
 	menu = [
 		{ icon: 'home', color: 'purple', title: '控制台', path: '/dashboard' },
-		{ icon: 'mdi-eye-settings-outline', color: 'pink', title: '插件', path: '/plugins' }
+		{ icon: 'mdi-widgets', color: 'pink', title: '插件', path: '/plugins' }
 	]
 }
 </script>

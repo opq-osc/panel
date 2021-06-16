@@ -61,7 +61,7 @@ import 'codemirror/theme/seti.css'
 @Component<Plugins>({})
 export default class Plugins extends Vue {
 	selectedItem = -1
-	plugin:{
+	plugin: {
 		name: string
 	}[] = []
 
@@ -82,7 +82,7 @@ export default class Plugins extends Vue {
 
 	async GetPluginsList(): Promise<void> {
 		this.$socket.emit('GetPluginsList', (data: Record<'Plugins', string[]>) => {
-			data.Plugins.forEach((element:any) => {
+			data.Plugins.forEach((element: any) => {
 				this.plugin.push({ name: element })
 			})
 		})
@@ -120,3 +120,10 @@ export default class Plugins extends Vue {
 	}
 }
 </script>
+<style lang="stylus">
+.CodeMirror
+    position absolute
+    height calc(100vh - 128px)
+    height calc(100vh - var(--vh-offset, 0px) - 128px)
+    width calc(100% - 32px)
+</style>
