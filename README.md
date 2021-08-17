@@ -16,18 +16,16 @@ OPQBot
 ├── Plugins/
 ├── UsersConf/
 ├── WebPlugins/
-├── WebUI/
-│   ├── css/
-│   ├── fonts/
-│   ├── img/
-│   ├── index.html
-│   ├── js/
-│   ├── manifest.json
-│   ├── precache-manifest.847e8499c54d7476aa0832f73f2b7bc1.js
-│   ├── robots.txt
-│   └── service-worker.js
-└── log/
-
+└── WebUI/
+    ├── css/
+    ├── fonts/
+    ├── img/
+    ├── index.html
+    ├── js/
+    ├── manifest.json
+    ├── precache-manifest.847e8499c54d7476aa0832f73f2b7bc1.js
+    ├── robots.txt
+    └── service-worker.js
 ~~~
 
 
