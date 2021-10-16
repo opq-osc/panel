@@ -6,7 +6,7 @@
 					<v-sheet class="overflow-y-auto fill-height" max-height="100vh" tile>
 						<v-skeleton-loader
 							type="list-item-two-line,list-item-two-line,list-item-two-line,list-item-two-line,list-item-two-line"
-							:loading="!plugin.length === 0"
+							:loading="!plugin.length"
 						>
 							<v-list flat>
 								<v-subheader>插件列表</v-subheader>
@@ -82,8 +82,9 @@ export default class Plugins extends Vue {
 
 	async GetPluginsList(): Promise<void> {
 		this.$socket.emit('GetPluginsList', (data: Record<'Plugins', string[]>) => {
-			data.Plugins.forEach((element: any) => {
-				this.plugin.push({ name: element })
+			this.plugin = []
+			data.Plugins.forEach((name) => {
+				this.plugin.push({ name })
 			})
 		})
 	}
