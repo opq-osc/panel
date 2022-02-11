@@ -1,16 +1,16 @@
 # panel(OPQBot WebUI)
 
-
-
 ## 使用方法
-### 1 使用编译完成的
-下载 [releases]( https://github.com/opq-osc/panel/releases) 中编译完成的压缩包   解压到OPQBot/WebUI目录即可
 
-WebUI地址 :OPQBot的IP:端口
+### 1 使用编译完成的
+
+下载 [releases](https://github.com/opq-osc/panel/releases) 中编译完成的压缩包 解压到 OPQBot/WebUI 目录即可
+
+WebUI 地址 :OPQBot 的 IP:端口
 
 > 例如 http://192.168.11.111:8888
 
-~~~
+```
 OPQBot
 ├── CodecScripts/
 ├── CoreConf.conf*
@@ -30,34 +30,24 @@ OPQBot
     ├── precache-manifest.847e8499c54d7476aa0832f73f2b7bc1.js
     ├── robots.txt
     └── service-worker.js
-~~~
-
-
+```
 
 ### 2 自行编译
 
-#### 编译前准备
-```
-1.直接下载已打包好的Vue项目放入OPQBot中的WebUI中，入口在这()，下面就不用看了  
-2.前往Nodejs官网(https://nodejs.org/)下载Nodejs并安装，并进行下列操作(第二步的好处是可以对源码进行更改，增加自己的模块)
-```
+1. 安装 Nodejs
+2. `npm install`
+3. `npm run build`
 
-#### 下载对应模块
-```
-进入该项目对应文件夹中打开终端输入>> npm install <<会自动下载项目相关模块，过程中如遇到(Y/N)，一律选Y
-```
-
-#### 编译打包Vue项目
-```
-执行完第二步后，在终端输入>> npm run build <<进行编译，打包结束后会生成一个dist文件夹，将dist文件夹中的文件粘贴到OPQBot中的WebUI中(注意是将文件夹中)即可
-```
+**用打包生成的 WebUI 文件夹替换 OPQBot 里的 WebUI 文件夹**
 
 > 可能出现的疑问
+>
 > ```markdown
-> 1.如果我改变了OPQBot的端口，需要相应地改变Panel的端口吗?
+> 1.如果我改变了 OPQBot 的端口，需要相应地改变 Panel 的端口吗?
 > 答:不需要
 > ```
 
 ## 相关网址
-[Vue官网](https://cn.vuejs.org)  
-[Nodejs官网](https://nodejs.org/)
+
+[Vue 官网](https://cn.vuejs.org)  
+[Nodejs 官网](https://nodejs.org/)
