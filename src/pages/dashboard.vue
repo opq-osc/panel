@@ -169,6 +169,15 @@ export interface SystemUsage {
   NetSend: number;
 }
 
+use([
+  GridComponent,
+  CanvasRenderer,
+  LineChart,
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+]);
+
 const data = ref<Partial<SystemInfo>>({});
 
 const ws = inject('ws') as SocketIOClient.Socket;
@@ -322,19 +331,6 @@ const option = ref({
   ],
 });
 
-use([
-  GridComponent,
-  CanvasRenderer,
-  LineChart,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-]);
-
-onMounted(() => {
-  //
-});
-
 const timer = setInterval(
   () =>
     ws.emit('SystemInfo', (info: SystemInfo) => {
@@ -357,6 +353,12 @@ const timer = setInterval(
     }),
   3000
 );
+
+onMounted(() => {
+  ws.emit('SystemInfo', (info: SystemInfo) => {
+    data.value = info;
+  });
+});
 
 onUnmounted(() => clearInterval(timer));
 </script>

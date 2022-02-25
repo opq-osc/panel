@@ -3,6 +3,7 @@ import { boot } from 'quasar/wrappers'
 import io from 'socket.io-client'
 
 export default boot(({ app }) => {
+  console.info('boot')
   const protocol = location.protocol == 'http:' ? 'ws://' : 'wss://';
   const url = `${protocol}${location.host}`
   const ws = io(url, {
@@ -16,6 +17,6 @@ export default boot(({ app }) => {
       position: 'bottom',
       message: `成功建立ws连接 ${ws.id}`
     });
-    app.provide('ws', ws)
   });
+  app.provide('ws', ws)
 })
