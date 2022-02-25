@@ -11,6 +11,11 @@
 <script lang="ts" setup>
 import Header from '../components/layout/header.vue';
 import Drawer from '../components/layout/drawer.vue';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { useQuasar } from 'quasar';
+const $q = useQuasar();
 const drawer = ref(false);
+onMounted(() => {
+  $q.dark.set($q.localStorage.getItem<boolean>('dark') ?? 'auto');
+});
 </script>
