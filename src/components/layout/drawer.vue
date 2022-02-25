@@ -95,5 +95,11 @@ const menu: { title: string; color: string; icon: string; link: string }[] = [
     icon: 'mdi-api',
     link: '',
   },
+  {
+    title: 'chat',
+    color: 'pink',
+    icon: 'mdi-chat',
+    link: 'chat',
+  },
 ];
 </script>

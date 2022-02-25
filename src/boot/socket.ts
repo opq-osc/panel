@@ -3,9 +3,9 @@ import { boot } from 'quasar/wrappers'
 import io from 'socket.io-client'
 
 export default boot(({ app }) => {
-  // const protocol = location.protocol == 'http:' ? 'ws://' : 'wss://';
-  // const url = `${protocol}${location.host}`
-  const ws = io('ws://teeoo.cn:3399', {
+  const protocol = location.protocol == 'http:' ? 'ws://' : 'wss://';
+  const url = `${protocol}${location.host}`
+  const ws = io(url, {
     upgrade: true,
     autoConnect: true,
     transports: ['websocket']
