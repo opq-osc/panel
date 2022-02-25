@@ -1,8 +1,10 @@
 <template>
-	<div>
-		<vue-snotify></vue-snotify>
-		<transition name="scroll-y-transition">
-			<router-view />
-		</transition>
-	</div>
+  <router-view />
 </template>
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'App'
+})
+</script>
